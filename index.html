@@ -1,0 +1,188 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <meta name="twitter:title" content="Offpress" />
+    <meta name="twitter:image" content="https://offbase.org/offbaselight.png" />
+    <meta property="og:type"   content="website" />
+    <meta property="og:title" content="Offpress" />
+    <meta property="og:image" content="https://offbase.org/offbaselight.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      body {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        margin: 0;
+        font-size: 16px;
+        line-height: 20px;
+        background: white;
+        color: rgba(0,0,0,0.7);
+      }
+      nav {
+        padding: 60px 10px;
+        margin: 0 auto;
+        text-align: left;
+        max-width: 800px;
+        box-sizing: border-box;
+        border-bottom: 1px solid rgba(0,0,0,0.07);
+      }
+      nav h1 {
+        margin: 0;
+        font-size: 30px;
+        line-height: 50px;
+        letter-spacing: -1px;
+        display: inline-block;
+        font-family: georgia;
+        font-style: italic;
+      }
+      nav h1 a {
+        text-decoration: none;
+        color: rgba(0,0,0,0.8);
+      }
+      .hidden {
+        display: none;
+      }
+      .flexible {
+        flex-grow: 1;
+      }
+      nav button, nav .button {
+        margin: 5px;
+        padding: 5px 10px;
+        border-radius: 1px;
+        background: none;
+        border: none;
+        color: rgba(0,0,0,0.8);
+        text-decoration: none;
+        font-size: 14px;
+        display: inline-block;
+        cursor: pointer;
+      }
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 50px auto;
+        max-width: 800px;
+      }
+      .flex {
+        display: flex !important;
+      }
+      .row {
+        display: block;
+        text-decoration: none;
+        font-size: 20px;
+        color: rgba(0,0,0,0.7);
+        font-family: Sans-serif;
+        padding: 25px;
+        width: 100%;
+        box-sizing: border-box;
+      }
+      .row .image {
+        height: 300px;
+        overflow: hidden;
+        margin-top: 12px;
+      }
+      .row .image img {
+        width: 100%;
+      }
+      .row .title {
+        color: rgba(0,0,0,0.8);
+        font-size: 30px;
+        line-height: 40px;
+        margin: 5px 0;
+        letter-spacing: -1px;
+        font-family: Georgia;
+        font-style: italic;
+      }
+      .row .description {
+        font-style: normal;
+        font-family: sans-serif;
+        font-size: 16px;
+        line-height: 20px;
+        color: rgba(0,0,0,0.8);
+        padding-top: 4px;
+      }
+      .row .updated {
+        font-style: normal;
+        font-family: sans-serif;
+        font-size: 14px;
+        color: rgba(0,0,0,0.6);
+      }
+      .row:hover {
+        color: black;
+      }
+      footer {
+        text-align: center;
+        padding: 20px 0;
+      }
+      footer a {
+        display: inline-block;
+        margin: 5px;
+        padding: 2px 5px;
+        font-size: 15px;
+        font-weight: bold;
+        color: black;
+      }
+      footer a.current {
+        text-decoration: none;
+        opacity: 0.4;
+      }
+      footer .bottom {
+        margin-top: 50px;
+        margin-bottom: 20px;
+      }
+      footer .bottom a {
+        padding: 0;
+        margin: 0;
+        opacity: 0.6;
+        font-weight: normal;
+      }
+      .menu {
+        text-align: right;
+      }
+      .menu-items {
+        transition: max-height 0.3s ease-in-out;
+        max-height: 200px;
+        overflow: hidden;
+      }
+      .menu-items.collapsed {
+        max-height: 0;
+      }
+      .menu-items a {
+        display: block;
+        padding: 10px;
+        color: rgba(0,0,0,0.8);
+        text-decoration: none;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <h1><a href='./'>Offpress</a></h1>
+    </nav>
+    <div class='container'>
+      <a class='row' href="./post/test">
+          <div class='updated'>1612548466049</div>
+          <h2 class='title'>test</h2>
+          <div class='description'>this is a estwhat</div>
+      </a>
+    </div>
+    <footer>
+      <div class='pages'>
+          <a href="./pages/1" class='current'>1</a>
+      </div>
+      <div class='bottom'>
+        powered by <a href="https://offpress.app">offpress</a>
+      </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"></script>
+    <script>
+      document.querySelectorAll(".updated").forEach((el) => {
+        let timestamp = parseInt(el.textContent)
+        let ago = timeago.format(timestamp)
+        el.textContent = ago;
+      })
+    </script>
+  </body>
+</html>
